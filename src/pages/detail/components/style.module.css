@@ -1,0 +1,114 @@
+.userheader {
+    position: relative;
+    margin-top: 0.2rem;
+    line-height: 1rem;
+    display: flex;
+    width: 100%;
+    background-color: white;
+    height: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 0.3rem;
+    color: black;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid #B7B8B7;
+}
+
+
+.avatarcircle {
+    width: 1rem;
+    height: 1rem;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.followbox {
+    line-height: 0.8rem;
+    background-color: #F7F7F7;
+}
+
+.follow {
+    position: absolute;
+    right: 1.5rem;
+    top: 0.1rem;
+    width: 1.5rem;
+    height: 0.8rem;
+    background-color: #fff;
+    border-radius: 13%;
+    border: 3px solid #B7B8B7;
+    text-align: center;
+}
+
+.unfollow {
+    position: absolute;
+    right: 2rem;
+    top: 0.1rem;
+    width: 1.5rem;
+    height: 0.8rem;
+    text-align: center;
+    color: #B7B8B7;
+}
+
+
+.itemlocation {
+    text-indent: 0.6rem;
+    color: #B7B8B7;
+    font-size: medium;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    font-size: 0.25rem;
+}
+
+/* 价格区 */
+.price {
+    box-sizing: border-box;
+    margin-top: 0.2rem;
+    padding-left: 0.5rem;
+    width: 100%;
+    height: 1rem;
+    display: flex;
+    line-height: 1rem;
+    color: red;
+    font-size: 0.5rem;
+    font-weight: 600;
+}
+
+.addtofav {
+    box-sizing: border-box;
+    margin-top: 0.2rem;
+    padding-left: 0.5rem;
+    width: 100%;
+    height: 1rem;
+    display: flex;
+    line-height: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* 图片区 */
+
+.picture {
+    padding: 0.2rem;
+    width: 100%;
+    height: 5rem;
+    box-sizing: border-box;
+}
+
+/* 介绍区 */
+.description {
+    padding: 0.3rem;
+    margin-bottom: 0.3rem;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    font-size: 0.3rem;
+    font-weight: 600;
+    box-sizing: border-box;
+    overflow: scroll;
+}
+
+.adm-button.adm-button-large .buyNow {
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 5%;
+}

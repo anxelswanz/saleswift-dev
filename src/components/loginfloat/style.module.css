@@ -1,0 +1,32 @@
+.box {
+    border-radius: 7%;
+    position: fixed;
+    bottom: 1.4rem;
+    left: 0.35rem;
+    width: 90%;
+    height: 1.8rem;
+    background-color: black;
+    opacity: 0.6;
+    text-align: center;
+}
+
+@font-face {
+    font-family: 'fontnameRegular';
+    src: url('./Pointy.ttf');
+}
+
+.brand {
+    font-family: 'fontnameRegular';
+}
+
+.login {
+    color: white;
+    line-height: 1rem;
+    text-align: center;
+    box-sizing: border-box;
+    background: linear-gradient(to right, #1677FF, pink);
+    height: 1rem;
+    margin-top: 0.4rem;
+    margin-right: 0.2rem;
+    border-radius: 6%;
+}

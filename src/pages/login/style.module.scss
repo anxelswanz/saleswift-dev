@@ -1,0 +1,58 @@
+.login {
+  position: fixed;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #032654;
+  width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: 'fontnameRegular';
+  src: url('./Pointy.ttf');
+}
+
+.brand {
+  margin-top: 3rem;
+  width: 100%;
+  padding-left: 1.7rem;
+  padding-right: 2rem;
+  line-height: 2.5rem;
+  height: 2.5rem;
+  font-size: 0.8rem;
+  color: white;
+  font-size: 1rem;
+  font-family: 'fontnameRegular'
+}
+
+.loginbox {
+  opacity: 0.8 !important;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.password {
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-left: -0.6rem;
+
+  .input {
+    flex: auto;
+  }
+
+  .eye {
+    flex: none;
+    margin-left: 8px;
+    padding: 4px;
+    //cursor: pointer;
+    color: white;
+
+    svg {
+      display: block;
+      font-size: var(--adm-font-size-7);
+    }
+  }
+}

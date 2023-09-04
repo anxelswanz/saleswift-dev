@@ -1,0 +1,42 @@
+.header {
+    height: 0.8rem;
+    background-color: #1677FF;
+    display: flex;
+    line-height: 0.8rem;
+    color: whitesmoke;
+}
+
+.location {
+    width: 3.3rem;
+    text-align: center;
+    height: 0.8rem;
+    font-size: 0.30rem;
+}
+
+input {
+    border: 0;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.1rem;
+    padding: 0.1rem;
+    box-sizing: border-box;
+    color: black;
+}
+
+/* 调整NavLink样式 */
+.location a {
+    color: whitesmoke;
+}
+
+
+.center {
+    height: 0.6rem;
+    width: 100%;
+}
+
+.search {
+    width: 1.6rem;
+    text-align: center;
+    font-size: 0.30rem;
+}

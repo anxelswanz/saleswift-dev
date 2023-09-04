@@ -1,0 +1,12 @@
+.head {
+    padding-top: 0.5rem;
+    font-size: 0.4rem;
+    color: white;
+    text-indent: 0.3rem;
+}
+
+.bodybox {
+    width: 100%;
+    height: 18rem;
+    background-color: #1A191E;
+}

@@ -1,0 +1,20 @@
+.header {
+    height: 0.8rem;
+    background-color: #1677FF;
+    display: flex;
+    line-height: 0.8rem;
+    color: whitesmoke;
+    box-sizing: border-box;
+}
+
+.center {
+    height: 0.6rem;
+    width: 100%;
+    padding-left: 0.1rem;
+}
+
+.search {
+    width: 1.6rem;
+    text-align: center;
+    font-size: 0.30rem;
+}

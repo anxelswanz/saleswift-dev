@@ -1,0 +1,27 @@
+/* 标题 */
+.header {
+    margin-top: 0.1rem;
+    width: 100%;
+    height: 0.6rem;
+    background: linear-gradient(to right, #1677FF, pink);
+    line-height: 0.6rem;
+    color: white;
+    text-indent: 0.5rem;
+    font-size: large;
+}
+
+.itemtext {
+    width: 100%;
+    height: 1.2rem;
+    background-color: white;
+    font-size: 0.25rem;
+    padding-left: 0.2rem;
+}
+
+.price {
+    position: absolute;
+    left: 0.3rem;
+    bottom: 0.3rem;
+    color: pink;
+    font-size: 0.4rem;
+}

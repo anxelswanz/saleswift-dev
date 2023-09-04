@@ -1,0 +1,35 @@
+/*css 初始化*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+/* 移动端适配
+   vw / vh 布局 */
+html {
+    /* 100/750*100 */
+    font-size: 13.333333vw;
+}
+
+@media(min-width:750px) {
+    html {
+        font-size: 100px;
+    }
+}
+
+/* 给body设置字体大小, 否则导致字体特别大*/
+body {
+    font-size: 12px;
+}

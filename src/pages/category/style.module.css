@@ -1,0 +1,27 @@
+@font-face {
+    font-family: HandVetica;
+    src: url(./HandVetica.ttf);
+}
+
+.select {
+    font-size: 0.35rem;
+    margin-top: 0.4rem;
+    padding-left: 1rem;
+}
+
+.catleft {
+    border-top: 1px solid #1677ff;
+    margin-top: 0.4rem;
+}
+
+/* 右边展示 */
+.catRight {
+    margin-top: 0.4rem;
+    width: 5rem;
+}
+
+.rightHeader {
+    text-align: center;
+    font-size: 0.5rem;
+    font-weight: 600;
+}
