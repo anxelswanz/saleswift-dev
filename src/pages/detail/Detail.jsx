@@ -27,7 +27,7 @@ export default function Detail() {
         name: 'Standard Bed',
         user: 'Ansel',
         goodsReleasDate: '2023-12-1',
-        goodsId: '0001',
+        itemId: '0001',
         price: 123.12,
         ifsale: false,
         category: 'funiture',
@@ -39,7 +39,7 @@ export default function Detail() {
         name: 'Standard medium size Bed',
         user: 'Ansel',
         goodsReleasDate: '2023-12-1',
-        goodsId: '0002',
+        itemId: '0002',
         price: 115.12,
         ifsale: true,
         category: 'funiture',
@@ -52,7 +52,7 @@ export default function Detail() {
         name: 'Fine closet ',
         user: 'Jamie',
         goodsReleasDate: '2023-12-2',
-        goodsId: '0003',
+        itemId: '0003',
         price: 100.00,
         ifsale: false,
         category: 'wardrobe',
@@ -65,7 +65,7 @@ export default function Detail() {
         name: 'White Lamp from EKEA',
         user: 'Tommy',
         goodsReleasDate: '2023-12-23',
-        goodsId: '0004',
+        itemId: '0004',
         price: 12.12,
         ifsale: false,
         category: 'lamp',
@@ -78,7 +78,7 @@ export default function Detail() {
         name: 'Classic Sofa',
         user: 'Laura',
         goodsReleasDate: '2023-12-22',
-        goodsId: '0005',
+        itemId: '0005',
         price: 41.12,
         ifsale: false,
         category: 'funiture',
@@ -92,7 +92,7 @@ export default function Detail() {
         user: 'Ansel',
         address: 'London Bridge Kings Rd 202',
         goodsReleasDate: '2023-12-1',
-        goodsId: '0006',
+        itemId: '0006',
         price: 8,
         ifsale: false,
         category: 'pottery',
@@ -117,7 +117,7 @@ export default function Detail() {
         } catch {
             console.log("catch");
             recommends.map((item) => {
-                if (item.goodsId === id) {
+                if (item.itemId === id) {
                     setTitle(item.name)
                     setObj(item)
                 }

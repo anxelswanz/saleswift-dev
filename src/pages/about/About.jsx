@@ -88,6 +88,7 @@ export default function About() {
                     <Grid.Item style={{ textAlign: 'center' }}>
                         <Space direction='vertical' style={{ '--gap-vertical': '8px' }}>
                             <span className='iconfont icon-shoucang'
+                                onClick={() => { navigate('/showFav') }}
                                 style={{ fontSize: '0.55rem', color: '#1677ff' }}>
                             </span>
                             <span style={{ fontSize: '0.2rem' }}>

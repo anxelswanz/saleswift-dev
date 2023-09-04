@@ -50,6 +50,17 @@ export default function Content(props) {
         console.log(ifFollow);
     }
 
+    async function addToFav() {
+        const user = localStorage.getItem('user');
+        const userObj = JSON.parse(user);
+        const userId = userObj.userId;
+        const itemId = obj.itemId;
+        console.log(userId);
+        let res = await api.ifAddFav({ userId: userId, itemId: itemId })
+        setFlag(res.data.obj);
+
+    }
+
     return (
         <div>
             {/* 用户头像名称 */}
@@ -88,6 +99,7 @@ export default function Content(props) {
                     {flag ? <span className='iconfont icon-shoucang1'
                         style={{ fontSize: '0.7rem', color: '#1677FF' }}
                         onClick={() => {
+                            addToFav();
                             setFlag(false);
                             Toast.show({
                                 icon: 'loading',
@@ -97,6 +109,7 @@ export default function Content(props) {
                         }}></span>
                         : <span onClick={() => {
                             setFlag(true);
+                            addToFav();
                             Toast.show({
                                 icon: 'success',
                                 content: 'Add to favourite successfully',

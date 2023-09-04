@@ -54,6 +54,9 @@ const api = {
     },
     ifFollow(params) {
         return axios.get(base.ifFollow, { params })
+    },
+    ifAddFav(params) {
+        return axios.get(base.ifAddFav, { params })
     }
 }
 

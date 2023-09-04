@@ -15,6 +15,7 @@ import Category from '../pages/category/Category'
 import ShowCategory from '../pages/category/components/showCategory/ShowCategory'
 import Followers from '../pages/about/components/Followers'
 import Following from '../pages/about/components/Following'
+import ShowFav from '../pages/about/components/showFav/ShowFav'
 const routes = [
     {
         path: '/',
@@ -75,6 +76,9 @@ const routes = [
     }, {
         path: '/following',
         element: <Following />
+    }, {
+        path: '/showFav',
+        element: <ShowFav />
     }
 ]
 

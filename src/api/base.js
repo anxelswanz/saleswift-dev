@@ -12,6 +12,8 @@ const base = {
     saveItem: 'api/items/save',
     getByCategory: 'api/items/getByCategory',
     getItemByItemId: 'api/items/getItemByItemId',
+    //收藏
+    ifAddFav: 'api/items/ifAddFav',
 
 }
 
