@@ -16,6 +16,12 @@ import ShowCategory from '../pages/category/components/showCategory/ShowCategory
 import Followers from '../pages/about/components/Followers'
 import Following from '../pages/about/components/Following'
 import ShowFav from '../pages/about/components/showFav/ShowFav'
+import ShowPost from '../pages/about/components/showPost/ShowPost'
+import Order from '../pages/order/Order'
+import MakePayment from '../pages/order/components/makePayment/MakePayment'
+import Successful from '../pages/order/components/successful/Successful'
+import Purchase from '../pages/about/components/showPurchase/showPurchase'
+import Topup from '../pages/about/components/topup/Topup'
 const routes = [
     {
         path: '/',
@@ -79,6 +85,29 @@ const routes = [
     }, {
         path: '/showFav',
         element: <ShowFav />
+    }, {
+        path: '/showPost',
+        element: <ShowPost />
+    },
+    {
+        path: '/order',
+        element: <Order />
+    },
+    {
+        path: '/makePayment',
+        element: <MakePayment />
+    },
+    {
+        path: '/successful',
+        element: <Successful />
+    },
+    {
+        path: '/purchase',
+        element: <Purchase />
+    },
+    {
+        path: '/topup',
+        element: <Topup />
     }
 ]
 

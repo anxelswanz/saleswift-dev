@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Grid, Image } from 'antd-mobile'
+import { Button, Grid, Image, Modal, Toast } from 'antd-mobile'
 import Header from '../../../category/components/header/Header'
 import style from './style.module.css'
 import api from '../../../../api'
@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import avatar from '../../../../assets/pics/avatar/blackcat.png'
 import { LocationFill } from 'antd-mobile-icons'
 
-export default function ShowFav() {
+export default function ShowPost() {
 
     //定义路由
     const navigate = useNavigate()
@@ -16,22 +16,28 @@ export default function ShowFav() {
     //用于保存传递上来的数组
     const [data, setData] = useState([]);
 
+    //用于刷新
+    const [refresh, setRefresh] = useState(0)
+
+
+    const [ifInit, setIfInit] = useState(true)
     useEffect(() => {
-        getData();
+        if (ifInit) {
+            getData();
+            setIfInit(false)
+        }
+
     }, [data])
 
 
 
 
     async function getData() {
-        console.log('123');
         const user = localStorage.getItem('user');
         const userObj = JSON.parse(user);
         const userId = userObj.userId;
-        let res = await api.getFavItems({ userId: userId });
-        console.log('data=>', data);
+        let res = await api.showPurchase({ userId: userId });
         setData(res.data.obj);
-
     }
 
     let items = [];
@@ -83,6 +89,14 @@ export default function ShowFav() {
                     marginTop: '0.2rem',
                     fontSize: '0.3rem'
                 }}>{item.name}</div>
+
+                {/* 删除 */}
+                <div style={{
+                    width: '95%'
+                }}>
+
+                </div>
+
             </Grid.Item>
         })
     }

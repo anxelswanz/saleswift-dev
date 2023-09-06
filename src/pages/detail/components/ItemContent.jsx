@@ -4,7 +4,12 @@ import blackcat from '../../../assets/pics/avatar/blackcat.png'
 import { Button, Space, Toast } from 'antd-mobile'
 import { LocationFill } from 'antd-mobile-icons'
 import api from '../../../api'
+import { useNavigate } from 'react-router-dom'
 export default function Content(props) {
+
+    //添加路由
+    const navigate = useNavigate()
+
 
     //判断是否添加到fav
     const [flag, setFlag] = useState(false)
@@ -16,10 +21,29 @@ export default function Content(props) {
     //ifFollow boolean 判断用户是否关注该用户
     const [ifFollow, setIfFollow] = useState(false)
 
+    const [count, setCount] = useState(0);
     useEffect(() => {
+
         console.log('props', props.obj);
         setObj(props.obj)
+        //渲染时判断item是否加入fav
+        if (count === 0 && typeof (props.itemId) !== 'undefined') {
+            ifAddFav();
+            setCount(1)
+        }
     })
+
+    //渲染时判断item是否加入fav
+    async function ifAddFav() {
+        const user = localStorage.getItem('user');
+        const userObj = JSON.parse(user);
+        const userId = userObj.userId;
+        const itemId = props.itemId;
+        let res = await api.favInit({ userId: userId, itemId: itemId });
+        setFlag(res.data.obj)
+        console.log('flag', flag);
+    }
+
 
     //关注用户
     async function follow() {
@@ -70,7 +94,7 @@ export default function Content(props) {
                     className={style.avatarcircle}
                     src={blackcat}
                 />
-                <span style={{ marginLeft: '0.3rem', fontWeight: '600', fontSize: '0.35rem' }}>{obj.user}</span>
+                <span style={{ marginLeft: '0.3rem', fontWeight: '600', fontSize: '0.35rem' }}>{obj.username}</span>
 
                 {
                     ifFollow ?
@@ -144,7 +168,7 @@ export default function Content(props) {
 
             {/* 购买按钮 */}
             <div className='buyNow'>
-                <Button block color='success' size='large' >I want now</Button>
+                <Button block color='success' size='large' onClick={() => { navigate(`/order?itemId=${obj.itemId}`) }} >I want now</Button>
                 <Button block color='primary' size='large' >Contact the owner</Button>
             </div>
 

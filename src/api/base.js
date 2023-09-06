@@ -14,6 +14,19 @@ const base = {
     getItemByItemId: 'api/items/getItemByItemId',
     //收藏
     ifAddFav: 'api/items/ifAddFav',
+    getFavItems: 'api/items/getFavItems',
+    favInit: 'api/items/favInit',
+    //查看我的post
+    getMyPost: 'api/items/getMyPost',
+    //删除post
+    deleteMyPost: 'api/items/deleteMyPost',
+    //充值
+    topup: 'api/user/topup',
+    //查看购买的
+    showPurchase: 'api/items/showPurchase',
+    //订单
+    createOrder: 'api/order/createOrder',
+
 
 }
 

@@ -1,41 +1,76 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { PasscodeInput, NumberKeyboard, Modal } from 'antd-mobile'
 import style from './style.module.css'
 import { useState } from 'react'
 import api from '../../api'
 import md5 from 'js-md5'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import MyHeader from '../header/MyHeader'
+import res from 'antd-mobile-icons/es/AaOutline'
+
 export default function PasswordInput() {
+
+    const [search, setSearch] = useSearchParams();
 
     const [error, setError] = useState(false)
 
     const navigate = useNavigate();
 
     const [code, setCode] = useState('');
+
+
+
+
     async function complete() {
         let userjson = localStorage.getItem('user');
         const user = JSON.parse(userjson);
         const encode = md5(code)
         console.log('encode', encode);
         console.log('user', user.userId);
-        let res = await api.verifycode({ userid: user.userId, code: encode })
-        if (res.data.obj) {
-            Modal.show({
-                content: 'Your balance: ' + user.balance,
-                closeOnAction: true,
-                actions: [
-                    {
-                        key: 'gotit',
-                        text: 'Got it',
-                        primary: true,
-                    }],
-                afterClose: () => {
-                    navigate('/about')
+
+
+        let ifTopup = false;
+        ifTopup = search.get('ifTopup')
+
+        if (ifTopup) {
+            let money = search.get('money');
+            api.topup({ userId: user.userId, topup: money }).then(response => {
+                if (response.data.obj) {
+                    Modal.alert({
+                        content: `Top up ￡ ${money} successfully`,
+                        confirmText: 'Okay',
+                        onConfirm: () => {
+                            api.getUserById({ userId: user.userId }).then(response => {
+                                const newUser = response.data.obj;
+                                localStorage.setItem('user', JSON.stringify(newUser));
+                            })
+                            navigate('/home')
+                        }
+                    })
                 }
             })
+        } else {
+            let res = await api.verifycode({ userid: user.userId, code: encode })
+            console.log(res);
+            if (res.data.obj) {
+                Modal.show({
+                    content: 'Your balance: ' + user.balance,
+                    closeOnAction: true,
+                    actions: [
+                        {
+                            key: 'gotit',
+                            text: 'Got it',
+                            primary: true,
+                        }],
+                    afterClose: () => {
+                        navigate('/about')
+                    }
+                })
+            }
         }
+
+
     }
 
     return (

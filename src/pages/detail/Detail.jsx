@@ -127,7 +127,7 @@ export default function Detail() {
     return (
         <div>
             <Header title={title} />
-            <Content obj={obj} />
+            <Content obj={obj} itemId={obj.itemId} />
         </div>
     )
 }

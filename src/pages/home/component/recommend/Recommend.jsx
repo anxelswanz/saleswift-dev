@@ -27,7 +27,7 @@ export default function Recommend() {
     const recommends = [{
         url: example1,
         name: 'Standard Bed',
-        user: 'Ansel',
+        username: 'Ansel',
         goodsReleasDate: '2023-12-1',
         goodsId: '0001',
         price: 123.12,
@@ -40,7 +40,7 @@ export default function Recommend() {
     }, {
         url: example2,
         name: 'Standard medium size Bed',
-        user: 'Ansel',
+        username: 'Ansel',
         goodsReleasDate: '2023-12-1',
         goodsId: '0002',
         price: 115.12,
@@ -53,7 +53,7 @@ export default function Recommend() {
     }, {
         url: example3,
         name: 'Fine closet ',
-        user: 'Jamie',
+        username: 'Jamie',
         goodsReleasDate: '2023-12-2',
         goodsId: '0003',
         price: 100.00,
@@ -66,7 +66,7 @@ export default function Recommend() {
     }, {
         url: example4,
         name: 'White Lamp from EKEA',
-        user: 'Tommy',
+        username: 'Tommy',
         goodsReleasDate: '2023-12-23',
         goodsId: '0004',
         price: 12.12,
@@ -79,7 +79,7 @@ export default function Recommend() {
     }, {
         url: example5,
         name: 'Classic Sofa',
-        user: 'Laura',
+        username: 'Laura',
         goodsReleasDate: '2023-12-22',
         goodsId: '0005',
         price: 41.12,
@@ -92,7 +92,7 @@ export default function Recommend() {
     }, {
         url: example6,
         name: 'Vase',
-        user: 'Ansel',
+        username: 'Ansel',
         location: 'London Bridge Kings Rd 202',
         goodsReleasDate: '2023-12-1',
         goodsId: '0006',

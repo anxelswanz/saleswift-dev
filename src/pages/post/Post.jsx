@@ -203,6 +203,9 @@ export default function Post(props) {
                                     <Radio block value='bed'>
                                         Bed
                                     </Radio>
+                                    <Radio block value='sofa'>
+                                        Sofa
+                                    </Radio>
                                     <Radio block value='cutlery'>
                                         Cutlery
                                     </Radio>
@@ -221,6 +224,7 @@ export default function Post(props) {
                                     <Radio block value='tables'>
                                         Tables
                                     </Radio>
+
                                 </Space>
                             </Radio.Group>
                         </div>

@@ -57,6 +57,27 @@ const api = {
     },
     ifAddFav(params) {
         return axios.get(base.ifAddFav, { params })
+    },
+    getFavItems(params) {
+        return axios.get(base.getFavItems, { params })
+    },
+    favInit(params) {
+        return axios.get(base.favInit, { params })
+    },
+    getMyPost(params) {
+        return axios.get(base.getMyPost, { params })
+    },
+    deleteMyPost(params) {
+        return axios.get(base.deleteMyPost, { params })
+    },
+    createOrder(params) {
+        return axios.get(base.createOrder, { params })
+    },
+    showPurchase(params) {
+        return axios.get(base.showPurchase, { params })
+    },
+    topup(params) {
+        return axios.get(base.topup, { params })
     }
 }
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import MyHeader from '../../../../components/header/MyHeader'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import Header from '../header/Header';
-import { Grid, Image, Space } from 'antd-mobile';
+import { Grid, Image } from 'antd-mobile';
 import Content from '../../../detail/components/ItemContent';
 import style from './style.module.css'
 import api from '../../../../api';
@@ -21,6 +21,8 @@ export default function ShowCategory() {
 
     //定义返回商品的数组
     const [items, setItems] = useState([])
+
+    // const [flag, setFlag] = useState(false);
     useEffect(() => {
 
         console.log('photo=>', typeof Photo);
@@ -28,7 +30,8 @@ export default function ShowCategory() {
         setKey(search.get('key'))
         //分类名字
         setName(search.get('name'))
-
+        console.log(search.get('name'));
+        console.log('key', search.get('key'));
         //axios获取值
         getData(key)
     }, [key, name])
@@ -36,8 +39,6 @@ export default function ShowCategory() {
 
 
     async function getData(key) {
-
-        console.log(111);
         if (key !== '') {
             let res = await api.getByCategory({ name: key });
             setItems(res.data.obj)
@@ -46,14 +47,24 @@ export default function ShowCategory() {
 
 
 
+
     const showItems = items.map((item) => {
+
+
+        const ifSaled = item.ifSaled;
+        let flag = false;
+        if (ifSaled == 1) {
+            flag = true
+        }
+
+        console.log('flag', flag);
         //设置itemid
-        return <Grid.Item>
+        return <Grid.Item style={{ position: 'relative' }}>
 
             <div style={{
                 marginBottom: '0.2rem',
                 marginTop: '0.2rem',
-
+                position: 'relative'
             }}>
                 <img src={avatar} style={{
                     width: '12%',
@@ -87,7 +98,7 @@ export default function ShowCategory() {
                 </div>
             </div>
 
-            <div style={{}}>
+            <div >
                 <LocationFill /> <span>{item.city} {item.address}</span>
             </div>
             <div style={{
@@ -95,6 +106,16 @@ export default function ShowCategory() {
                 fontSize: '0.3rem'
             }}>{item.name}</div>
 
+            <div>
+                <span style={{
+                    display: `${flag ? 'block' : 'none'}`,
+                    position: 'absolute',
+                    fontSize: '0.5rem',
+                    color: 'red',
+                    left: 0,
+                    top: '0.7rem',
+                }} className='iconfont icon-seld_out'></span>
+            </div>
         </Grid.Item>
 
     })

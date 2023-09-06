@@ -1,7 +1,7 @@
 import React from 'react'
 import blackcat from '../../assets/pics/avatar/blackcat.png'
 import style from './style.module.css'
-import { Space, Grid, Button } from 'antd-mobile'
+import { Space, Grid, Button, Toast } from 'antd-mobile'
 import { ClockCircleOutline } from 'antd-mobile-icons'
 import { useState, useEffect } from 'react'
 import Loginfloat from '../../components/loginfloat/Loginfloat'
@@ -43,8 +43,6 @@ export default function About() {
         flag === 'true' ? iftrue = true : iftrue = false;
         console.log(typeof iftrue, iftrue);
         setIflogin(iftrue)
-
-        console.log('following', user.following);
     }, [])
 
     //查看余额
@@ -57,6 +55,10 @@ export default function About() {
         localStorage.setItem('user', '');
         localStorage.setItem('iflogin', false);
         navigate('/login')
+    }
+
+    function topup() {
+        navigate('/topup')
     }
 
     return (
@@ -129,11 +131,33 @@ export default function About() {
             {/*我发布的  */}
             <div className={style.postpurchase}>
                 <Grid columns={2}>
-                    <Grid.Item>
+                    <Grid.Item onClick={() => {
+                        if (user.userid === '') {
+                            Toast.show({
+                                content: 'Please Login first',
+                                afterClose: () => {
+                                    navigate('/login')
+                                },
+                            })
+                        } else {
+                            navigate('/showPost')
+                        }
+                    }}>
                         <span className='iconfont icon-huowu'
                             style={{ color: 'grey', fontSize: '0.5rem' }}></span> Post
                     </Grid.Item>
-                    <Grid.Item>
+                    <Grid.Item onClick={() => {
+                        if (user.userid === '') {
+                            Toast.show({
+                                content: 'Please Login first',
+                                afterClose: () => {
+                                    navigate('/login')
+                                },
+                            })
+                        } else {
+                            navigate('/purchase')
+                        }
+                    }}>
                         <span className='iconfont icon-goumai'
                             style={{ color: 'grey', fontSize: '0.5rem' }}></span> Purchase
                     </Grid.Item>
@@ -156,7 +180,7 @@ export default function About() {
                 </div>
                 <div className={style.wallet}>
                     <Grid columns={2}>
-                        <Grid.Item style={{ color: '#1677ff' }}>
+                        <Grid.Item style={{ color: '#1677ff' }} onClick={topup}>
                             <span className='iconfont icon-yingbang' style={{ fontSize: '0.5rem' }}></span>  Top up
                         </Grid.Item>
                         <Grid.Item style={{ color: '#1677ff' }} onClick={seeBalance}>
