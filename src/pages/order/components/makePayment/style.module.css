@@ -1,0 +1,25 @@
+.boxbody {
+    position: relative;
+    width: 100%;
+    height: 50rem;
+    background: linear-gradient(to bottom, white, #1677ff);
+}
+
+@font-face {
+    font-family: 'fontnameRegular';
+    src: url('./Pointy.ttf');
+}
+
+.brand {
+    color: grey;
+    font-family: 'fontnameRegular';
+    font-size: 1rem;
+
+}
+
+.number {
+    position: absolute;
+    top: 5rem;
+    left: 1.5rem;
+    text-align: center;
+}
